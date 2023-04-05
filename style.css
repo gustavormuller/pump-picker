@@ -103,6 +103,7 @@ section {
 }
 
 section.pick {
+    display: none;
     padding-top: 30px;
 }
 
@@ -149,4 +150,8 @@ section.pick {
 
 .row-items button {
     border: 0;
+}
+
+.video-container video {
+    width: 40%;
 }

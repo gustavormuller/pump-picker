@@ -1,16 +1,21 @@
-function changeSource() {
-    console.log('aaaa');
-}
-
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': '6ac66789b2mshcc987be0f424459p1f91f4jsn7bb0646b695e/',
-        'X-RapidAPI-Host': 'exerciseapi3.p.rapidapi.com'
+        'X-RapidAPI-Key': '6ac66789b2mshcc987be0f424459p1f91f4jsn7bb0646b695e',
+        'X-RapidAPI-Host': 'musclewiki.p.rapidapi.com'
     }
 };
 
-fetch('https://exerciseapi3.p.rapidapi.com/search/muscles/', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+const getRandom = (arr, nr) => arr
+    .slice()
+    .sort(() => 0.5 - Math.random())
+    .slice(0, nr)
+
+function callAPI() {
+    fetch('https://musclewiki.p.rapidapi.com/exercises?muscle=Chest', options)
+        .then(response => response.json())
+        .then(response => console.log(getRandom(response, 4)))
+        .catch(err => console.error(err));
+}
+
+callAPI();
