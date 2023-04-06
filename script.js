@@ -1,5 +1,6 @@
-const muscle = ['Biceps', 'Triceps', 'Shoulders', 'Forearms', 'Chest', 'Lats',
-    'Traps', 'Abdominals', 'Quads', 'Hamstrings', 'Glutes', 'Calves'];
+// var muscle = ['Biceps', 'Triceps', 'Shoulders', 'Forearms', 'Chest', 'Lats',
+//     'Traps', 'Abdominals', 'Quads', 'Hamstrings', 'Glutes', 'Calves'];
+var muscle;
 
 const options = {
     method: 'GET',
@@ -9,19 +10,32 @@ const options = {
     }
 };
 
-
-
-const getRandom = (arr, nr) => arr
-    .slice()
-    .sort(() => 0.5 - Math.random())
-    .slice(0, nr)
-
-function callAPI() {
-    fetch(`https://musclewiki.p.rapidapi.com/exercises?muscle=${muscle[8]}`, options)
+function callAPI(muscle) {
+    const apiUrl = `https://musclewiki.p.rapidapi.com/exercises?muscle=${muscle}`
+    fetch(apiUrl, options)
         .then(response => response.json())
         .then(response => exerciseDetails(response))
         .catch(err => console.error(err));
 }
+
+
+const muscleInput = document.querySelectorAll('#container-box');
+muscleInput.forEach(e => {
+    e.addEventListener('click', () => {
+        const muscle = e.className;
+        callAPI(muscle);
+    })
+})
+
+
+
+function getRandom(arr, nr) {
+    return arr
+        .slice()
+        .sort(() => 0.5 - Math.random())
+        .slice(0, nr);
+}
+
 
 function exerciseDetails(info) {
     const exercises = getRandom(info, 4);
@@ -29,7 +43,7 @@ function exerciseDetails(info) {
     exercises[2].exercise_name, exercises[3].exercise_name];
     const exerciseVideo = [exercises[0].videoURL, exercises[1].videoURL,
     exercises[2].videoURL, exercises[3].videoURL];
-    
+
     document.querySelector('.exercise-name0').innerText = exerciseName[0];
     document.querySelector('.workout-video0').setAttribute('src', exerciseVideo[0]);
     document.querySelector('.exercise-name1').innerText = exerciseName[1];
@@ -39,5 +53,3 @@ function exerciseDetails(info) {
     document.querySelector('.exercise-name3').innerText = exerciseName[3];
     document.querySelector('.workout-video3').setAttribute('src', exerciseVideo[3]);
 }
-
-// callAPI();
