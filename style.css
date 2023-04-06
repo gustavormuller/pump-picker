@@ -150,6 +150,7 @@ section.pick {
 
 section.pump {
     display: none;
+    padding-top: 30px;
 }
 
 .wrapper {
@@ -161,7 +162,7 @@ section.pump {
 
 .exercise-container {
     background: #ffffff2f;
-    padding: 10px 20px;
+    padding: 20px 30px;
     border-radius: 10px;
 }
 
@@ -173,4 +174,26 @@ section.pump {
 .video-container video {
     width: 100%;
     border-radius: 10px;
+}
+
+.back-container {
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+    cursor: pointer;
+}
+
+.back-container i {
+    color: #22a2f7;
+    font-size: 2.4rem;
+    margin-right: 7px;
+}
+
+.back-container span {
+    font-size: 2rem;
+    transition: all ease 0.3s;
+}
+
+.back-container:hover {
+    color: #22a2f7;
 }

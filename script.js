@@ -56,3 +56,9 @@ function exerciseDetails(info) {
     document.querySelector('.exercise-name3').innerText = exerciseName[3];
     document.querySelector('.workout-video3').setAttribute('src', exerciseVideo[3]);
 }
+
+const backDiv = document.querySelector('.back-container');
+backDiv.addEventListener('click', () => {
+    document.querySelector('.pick').style.display = 'block';
+    document.querySelector('.pump').style.display = 'none';
+});
