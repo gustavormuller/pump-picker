@@ -30,7 +30,7 @@ header {
 
 .logo {
     color: #fff;
-    font-size: 35px;
+    font-size: 40px;
     font-weight: 500;
 }
 
@@ -41,15 +41,23 @@ header {
 .navbar a {
     color: #fff;
     padding: 0 25px;
-    font-size: 18px;
+    font-size: 21px;
     font-weight: 400;
     border-radius: 4px;
     transition: ease 0.4s;
 }
 
 .navbar a:hover {
-    font-size: 20px;
+    font-size: 22px;
     text-shadow: 0.5px 0.5px 2px #fff;
+}
+
+#menu-icon {
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+    z-index: 20;
+    display: none;
 }
 
 section {
@@ -259,4 +267,127 @@ section.contact {
 
 .links i {
     padding-right: 8px;
+}
+
+@media (max-width: 1400px) {
+    header {
+        padding: 17px 3%;
+        transition: 0.2s;
+    }
+
+    section {
+        padding: 80px 3%;
+        transition: 0.2s;
+    }
+
+    .home-text h1 {
+        font-size: 60px;
+        transition: 0.2s;
+    }
+
+    .pick-text h2 {
+        font-size: 40px;
+        transition: 0.2s;
+    }
+}
+
+@media (max-width: 1040px) {
+    .home {
+        height: 88vh;
+    }
+
+    .home-text p {
+        width: 450px;
+        transition: 0.2s;
+    }
+
+    .navbar a {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 575px) {
+    header {
+        position: absolute;
+        flex-direction: column;
+        align-items: flex-start;
+        background: #000;
+    }
+
+    #menu-icon {
+        position: absolute;
+        display: flex;
+        top: 0.75rem;
+        right: 1rem;
+    }
+
+    .navbar {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .navbar li {
+        padding: 20px 0;
+    }
+
+    .navbar a:hover {
+        font-size: 21px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .home {
+        height: 90vh;
+        transition: 0.2s;
+    }
+
+    .home-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-text h1 {
+        padding: 30px 0;
+        font-size: 40px;
+        text-align: start;
+    }
+
+    .home-text p {
+        width: 270px;
+        padding-bottom: 30px;
+    }
+
+    .home-btn {
+        font-size: 20px;
+    }
+
+    .wrapper {
+        grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+
+    .footer div {
+        padding: 20px 0;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .pick-text h2 {
+        font-size: 30px;
+    }
+
+    .row-items {
+        grid-template-columns: 1fr 1fr;
+    }
 }
