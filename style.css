@@ -149,13 +149,13 @@ section.pick {
 }
 
 section.pump {
-    display: none;
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, auto));    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(500px, auto));
+    grid-gap: 2rem;
     align-items: center;
     text-align: center;
 }
@@ -181,6 +181,7 @@ section.pump {
     align-items: center;
     padding-bottom: 15px;
     cursor: pointer;
+    color: #fff;
 }
 
 .back-container i {
@@ -196,4 +197,66 @@ section.pump {
 
 .back-container:hover {
     color: #22a2f7;
+}
+
+section.contact {
+    padding-bottom: 60px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 60px 40px 0 40px;
+    border-top: 1px solid;
+}
+
+.dev-name {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    font-size: 1.3rem;
+}
+
+.dev-name h3 {
+    font-size: 1.7rem;
+    border-bottom: 1px solid;
+}
+
+.email h3 {
+    text-align: justify;
+    font-size: 1.7rem;
+    border-bottom: 1px solid;
+}
+
+.email span {
+    font-size: 1.3rem;
+    text-align: justify;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.links h3 {
+    font-size: 1.7rem;
+    border-bottom: 1px solid;
+}
+
+.links a {
+    color: #fff;
+    font-size: 1.3rem;
+    padding-top: 8px;
+    line-height: 1;
+    transition: ease 0.3s;
+}
+
+.links a:hover {
+    color: #22a2f7;
+}
+
+.links i {
+    padding-right: 8px;
 }

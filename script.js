@@ -1,7 +1,3 @@
-// var muscle = ['Biceps', 'Triceps', 'Shoulders', 'Forearms', 'Chest', 'Lats',
-//     'Traps', 'Abdominals', 'Quads', 'Hamstrings', 'Glutes', 'Calves'];
-var muscle;
-
 const options = {
     method: 'GET',
     headers: {
@@ -16,10 +12,6 @@ async function callAPI(muscle) {
         .then(response => response.json())
         .then(response => exerciseDetails(response))
         .catch(err => console.error(err));
-
-    document.querySelector('.pick').style.display = 'none';
-    document.querySelector('.pump').style.display = 'block';
-
 }
 
 const muscleInput = document.querySelectorAll('#container-box');
@@ -30,15 +22,12 @@ muscleInput.forEach(e => {
     })
 })
 
-
-
 function getRandom(arr, nr) {
     return arr
         .slice()
         .sort(() => 0.5 - Math.random())
         .slice(0, nr);
 }
-
 
 function exerciseDetails(info) {
     const exercises = getRandom(info, 4);
@@ -56,9 +45,3 @@ function exerciseDetails(info) {
     document.querySelector('.exercise-name3').innerText = exerciseName[3];
     document.querySelector('.workout-video3').setAttribute('src', exerciseVideo[3]);
 }
-
-const backDiv = document.querySelector('.back-container');
-backDiv.addEventListener('click', () => {
-    document.querySelector('.pick').style.display = 'block';
-    document.querySelector('.pump').style.display = 'none';
-});
