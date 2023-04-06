@@ -103,7 +103,7 @@ section {
 }
 
 section.pick {
-    display: none;
+    /* display: none; */
     padding-top: 30px;
 }
 
