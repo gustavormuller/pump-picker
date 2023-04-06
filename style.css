@@ -103,7 +103,7 @@ section {
 }
 
 section.pick {
-    /* display: none; */
+    display: block;
     padding-top: 30px;
 }
 
@@ -148,10 +148,29 @@ section.pick {
     width: 43%;
 }
 
-.row-items button {
-    border: 0;
+section.pump {
+    display: none;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, auto));    grid-gap: 2rem;
+    align-items: center;
+    text-align: center;
+}
+
+.exercise-container {
+    background: #ffffff2f;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.exercise-container span {
+    font-size: 1.5rem;
+    line-height: 2;
 }
 
 .video-container video {
-    width: 40%;
+    width: 100%;
+    border-radius: 10px;
 }

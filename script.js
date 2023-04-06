@@ -10,14 +10,17 @@ const options = {
     }
 };
 
-function callAPI(muscle) {
+async function callAPI(muscle) {
     const apiUrl = `https://musclewiki.p.rapidapi.com/exercises?muscle=${muscle}`
-    fetch(apiUrl, options)
+    await fetch(apiUrl, options)
         .then(response => response.json())
         .then(response => exerciseDetails(response))
         .catch(err => console.error(err));
-}
 
+    document.querySelector('.pick').style.display = 'none';
+    document.querySelector('.pump').style.display = 'block';
+
+}
 
 const muscleInput = document.querySelectorAll('#container-box');
 muscleInput.forEach(e => {
