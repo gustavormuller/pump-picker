@@ -30,5 +30,4 @@ A aplicação utiliza a MuscleWiki API (https://rapidapi.com/rahulbanerjee26/api
 # Autor
 
 Gustavo Raasch Müller
-
 https://www.linkedin.com/in/gustavormuller/
